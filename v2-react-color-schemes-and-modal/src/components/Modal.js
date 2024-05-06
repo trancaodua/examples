@@ -5,9 +5,11 @@ export default function Modal(props) {
   const { modalIsOpen, handleClose } = useModal();
 
   const handleClickOverlay = (event) => {
-    if (event.target === event.currentTarget) {
-      handleClose(event);
-    }
+    console.log(event.target);
+    console.log(event.currentTarget);
+    // if (event.target === event.currentTarget) {
+    //   handleClose(event);
+    // }
   };
 
   return (

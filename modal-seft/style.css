@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+.modal-is-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width, 0);
+}
+
+body {
+  height: 200vh;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(213, 220, 226, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  -webkit-backdrop-filter: blur(0.15rem);
+  backdrop-filter: blur(0.15rem);
+}
+
+dialog:not([open]),
+dialog[open="false"] {
+  display: none;
+}
+
+.modal-article {
+  background-color: white;
+}
+
+.modal-opening dialog {
+  animation: modal-overlay 0.8s ease-in-out;
+}
+
+.modal-opening dialog > article {
+  animation: modal 0.8s ease-in-out;
+}
+
+@keyframes modal {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes modal-overlay {
+  0% {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: transparent;
+  }
+}
